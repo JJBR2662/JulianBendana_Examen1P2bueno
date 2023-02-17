@@ -48,7 +48,7 @@ public class PC_Laptop extends PC{
 
     @Override
     public String toString() {
-        return super.toString()+" PC_Laptop{" + "marca=" + marca + ", defpantalla=" + defpantalla + ", RGB=" + RGB + '}';
+        return "IP: "+super.getIp()+"\nMascara de red: "+super.getMascara()+"\nHost Name: "+super.getHost() + "\nMarca: " + marca + "\nDefinicion de Pantalla: " + defpantalla + "\nTrae RGB en el teclado:" + RGB;
     }
 
     
