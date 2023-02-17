@@ -123,7 +123,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
-                                      <Component id="jButton1" min="-2" pref="177" max="-2" attributes="0"/>
+                                      <Component id="botonagregarvariable" min="-2" pref="177" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
@@ -146,7 +146,7 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="Hostname" max="32767" attributes="0"/>
-                                          <Component id="jTextField4" max="32767" attributes="0"/>
+                                          <Component id="marca" max="32767" attributes="0"/>
                                           <Component id="Mascarared" alignment="0" max="32767" attributes="0"/>
                                           <Component id="IP" alignment="0" max="32767" attributes="0"/>
                                           <Component id="Definiciondepantalla" min="-2" pref="162" max="-2" attributes="0"/>
@@ -193,7 +193,7 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jTextField4" max="32767" attributes="0"/>
+                                  <Component id="marca" max="32767" attributes="0"/>
                                   <Component id="jLabel4" min="-2" pref="33" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -202,7 +202,7 @@
                                   <Component id="Definiciondepantalla" min="-2" pref="27" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" pref="64" max="-2" attributes="0"/>
+                              <Component id="botonagregarvariable" min="-2" pref="64" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
@@ -226,7 +226,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="Hostname">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField4">
+            <Component class="javax.swing.JTextField" name="marca">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
@@ -254,6 +254,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="Definiciondepantalla">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DefiniciondepantallaActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane1">
               <AuxValues>
@@ -288,10 +291,13 @@
                 <Property name="text" type="java.lang.String" value="&#xbf;El teclado tiene RGB?"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="botonagregarvariable">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Agregar Laptop"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonagregarvariableMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
@@ -361,8 +367,8 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="RAM" alignment="0" min="-2" pref="182" max="-2" attributes="0"/>
-                                  <Component id="almacenamiento" alignment="0" min="-2" pref="182" max="-2" attributes="0"/>
+                                  <Component id="memram" alignment="0" min="-2" pref="182" max="-2" attributes="0"/>
+                                  <Component id="almacenamientoo" alignment="0" min="-2" pref="182" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
                               <Component id="jScrollPane2" min="-2" pref="53" max="-2" attributes="0"/>
@@ -387,7 +393,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="291" max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="agregarescritorio" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -417,12 +423,12 @@
                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel12" pref="36" max="32767" attributes="0"/>
-                                  <Component id="RAM" max="32767" attributes="0"/>
+                                  <Component id="memram" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel13" pref="35" max="32767" attributes="0"/>
-                                  <Component id="almacenamiento" max="32767" attributes="0"/>
+                                  <Component id="almacenamientoo" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -439,7 +445,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="jButton2" min="-2" pref="61" max="-2" attributes="0"/>
+                      <Component id="agregarescritorio" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -492,7 +498,7 @@
                 <Property name="text" type="java.lang.String" value="Cuanto tiene de Ram:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="RAM">
+            <Component class="javax.swing.JTextField" name="memram">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel13">
               <Properties>
@@ -502,7 +508,7 @@
                 <Property name="text" type="java.lang.String" value="Almacenamiento:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="almacenamiento">
+            <Component class="javax.swing.JTextField" name="almacenamientoo">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
               <Properties>
@@ -521,7 +527,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="jList1">
+                <Component class="javax.swing.JList" name="tienetarjeta">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="1"/>
@@ -547,13 +553,16 @@
                 <Property name="text" type="java.lang.String" value="&#xbf;Tiene Tarjeta Grafica?"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="agregarescritorio">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Microsoft YaHei Light" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Agregar Computadora"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="agregarescritorioMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

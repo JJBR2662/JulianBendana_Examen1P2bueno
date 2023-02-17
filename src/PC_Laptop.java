@@ -15,7 +15,7 @@ public class PC_Laptop extends PC{
         super();
     }
 
-    public PC_Laptop( String marca, String defpantalla, boolean tarjetagrafica, boolean RGB, String ip, String mascara, String host) {
+    public PC_Laptop( String marca, String defpantalla, boolean RGB, String ip, String mascara, String host) {
         super(ip, mascara, host);
         this.marca = marca;
         this.defpantalla = defpantalla;

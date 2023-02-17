@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -41,7 +42,7 @@ public class Main extends javax.swing.JFrame {
         IP = new javax.swing.JTextField();
         Mascarared = new javax.swing.JTextField();
         Hostname = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        marca = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -51,7 +52,7 @@ public class Main extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         rgb = new javax.swing.JList<>();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        botonagregarvariable = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jFrameescritorio = new javax.swing.JFrame();
         jPanel4 = new javax.swing.JPanel();
@@ -63,15 +64,15 @@ public class Main extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         hostname2 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        RAM = new javax.swing.JTextField();
+        memram = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        almacenamiento = new javax.swing.JTextField();
+        almacenamientoo = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         tipodealma = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        tienetarjeta = new javax.swing.JList<>();
         jLabel15 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        agregarescritorio = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         Botonagregarcompu = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
@@ -150,6 +151,12 @@ public class Main extends javax.swing.JFrame {
 
         jLabel5.setText("Definicion de Pantalla:");
 
+        Definiciondepantalla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DefiniciondepantallaActionPerformed(evt);
+            }
+        });
+
         rgb.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         rgb.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Si", "No" };
@@ -161,7 +168,12 @@ public class Main extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setText("¿El teclado tiene RGB?");
 
-        jButton1.setText("Agregar Laptop");
+        botonagregarvariable.setText("Agregar Laptop");
+        botonagregarvariable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonagregarvariableMouseClicked(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
         jLabel7.setText("AGREGANDO UNA LAPTOP");
@@ -180,7 +192,7 @@ public class Main extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(163, 163, 163)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(botonagregarvariable, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,7 +209,7 @@ public class Main extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(Hostname)
-                                    .addComponent(jTextField4)
+                                    .addComponent(marca)
                                     .addComponent(Mascarared)
                                     .addComponent(IP)
                                     .addComponent(Definiciondepantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -231,14 +243,14 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField4)
+                            .addComponent(marca)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Definiciondepantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botonagregarvariable, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(71, 71, 71))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel6)
@@ -273,19 +285,24 @@ public class Main extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel14.setText("Tipo de Almacenamiento:");
 
-        jList1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        tienetarjeta.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tienetarjeta.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Si", "No" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(jList1);
+        jScrollPane2.setViewportView(tienetarjeta);
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel15.setText("¿Tiene Tarjeta Grafica?");
 
-        jButton2.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 18)); // NOI18N
-        jButton2.setText("Agregar Computadora");
+        agregarescritorio.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 18)); // NOI18N
+        agregarescritorio.setText("Agregar Computadora");
+        agregarescritorio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                agregarescritorioMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -312,8 +329,8 @@ public class Main extends javax.swing.JFrame {
                             .addGap(105, 105, 105)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RAM, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(almacenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(memram, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(almacenamientoo, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(122, 122, 122)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
@@ -330,7 +347,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(200, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(291, 291, 291)
-                .addComponent(jButton2)
+                .addComponent(agregarescritorio)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -355,11 +372,11 @@ public class Main extends javax.swing.JFrame {
                         .addGap(15, 15, 15)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                            .addComponent(RAM))
+                            .addComponent(memram))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                            .addComponent(almacenamiento))
+                            .addComponent(almacenamientoo))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -371,7 +388,7 @@ public class Main extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(agregarescritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77))
         );
 
@@ -465,6 +482,57 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_IPActionPerformed
 
+    private void botonagregarvariableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonagregarvariableMouseClicked
+        if (IP.getText().isBlank()||Mascarared.getText().isBlank()||Hostname.getText().isBlank()||marca.getText().isBlank()||Definiciondepantalla.getText().isBlank()||rgb.isSelectionEmpty()) {
+            JOptionPane.showMessageDialog(null, "No se puede dejar NI UN solo espacio en blanco");
+        }else{
+            boolean serargb;
+            if (rgb.getSelectedValue().equalsIgnoreCase("si")) {
+                serargb = true;
+            }else{
+                serargb = false;
+            }
+            compus.add(new PC_Laptop(marca.getText(), Definiciondepantalla.getText(), serargb, IP.getText(), Mascarared.getText(), Hostname.getText()));
+            JOptionPane.showMessageDialog(null, "Se agrego una nueva laptop");
+            IP.setText("");
+            Mascarared.setText("");
+            Hostname.setText("");
+            marca.setText("");
+            Definiciondepantalla.setText("");
+            rgb.setSelectedValue(null, false);
+            jFramelaptop.setVisible(false);
+        }
+    }//GEN-LAST:event_botonagregarvariableMouseClicked
+
+    private void DefiniciondepantallaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DefiniciondepantallaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DefiniciondepantallaActionPerformed
+
+    private void agregarescritorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarescritorioMouseClicked
+        if (IP2.getText().isBlank()||Mascarared2.getText().isBlank()||hostname2.getText().isBlank()||memram.getText().isBlank()||almacenamientoo.getText().isBlank()||tipodealma.getText().isBlank()||tienetarjeta.isSelectionEmpty()){
+            JOptionPane.showMessageDialog(null, "No se puede dejar NI UN solo espacio en blanco");
+        }else{
+            boolean tendra;
+            if (tienetarjeta.getSelectedValue().equalsIgnoreCase("Si")) {
+                tendra = true;
+            }else{
+                tendra = false;
+            }
+            int memoriaram = Integer.parseInt(memram.getText());
+            int alma = Integer.parseInt(almacenamientoo.getText());
+            compus.add(new PC_Escritorio(memoriaram, alma, tipodealma.getText(), tendra, IP2.getText(), Mascarared2.getText(), hostname2.getText()));
+            JOptionPane.showMessageDialog(null, "Se agrego una nueva computadora de escritorio");
+            IP2.setText("");
+            Mascarared2.setText("");
+            hostname2.setText("");
+            memram.setText("");
+            almacenamientoo.setText("");
+            tipodealma.setText("");
+            tienetarjeta.setSelectedValue(null, false);
+            jFrameescritorio.setVisible(false);
+        }
+    }//GEN-LAST:event_agregarescritorioMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -509,13 +577,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField IP2;
     private javax.swing.JTextField Mascarared;
     private javax.swing.JTextField Mascarared2;
-    private javax.swing.JTextField RAM;
-    private javax.swing.JTextField almacenamiento;
+    private javax.swing.JButton agregarescritorio;
+    private javax.swing.JTextField almacenamientoo;
+    private javax.swing.JButton botonagregarvariable;
     private javax.swing.JButton botonescritorio;
     private javax.swing.JButton botonlaptop;
     private javax.swing.JTextField hostname2;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JFrame jFramecrud;
     private javax.swing.JFrame jFrameescritorio;
     private javax.swing.JFrame jFramelaptop;
@@ -536,15 +603,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField marca;
+    private javax.swing.JTextField memram;
     private javax.swing.JList<String> rgb;
+    private javax.swing.JList<String> tienetarjeta;
     private javax.swing.JTextField tipodealma;
     // End of variables declaration//GEN-END:variables
 }
