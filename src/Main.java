@@ -14,6 +14,8 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -25,21 +27,101 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jFramecrud = new javax.swing.JFrame();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jFramelaptop = new javax.swing.JFrame();
+        jFrameescritorio = new javax.swing.JFrame();
+        Botonagregarcompu = new javax.swing.JButton();
+        Botoningresarcompu = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jFramecrud.setBackground(new java.awt.Color(255, 255, 0));
+
+        jButton1.setText("Laptop");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Escritorio");
+
+        javax.swing.GroupLayout jFramecrudLayout = new javax.swing.GroupLayout(jFramecrud.getContentPane());
+        jFramecrud.getContentPane().setLayout(jFramecrudLayout);
+        jFramecrudLayout.setHorizontalGroup(
+            jFramecrudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFramecrudLayout.createSequentialGroup()
+                .addGap(209, 209, 209)
+                .addGroup(jFramecrudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE))
+                .addContainerGap(213, Short.MAX_VALUE))
+        );
+        jFramecrudLayout.setVerticalGroup(
+            jFramecrudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFramecrudLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(91, 91, 91)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(110, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jFramelaptopLayout = new javax.swing.GroupLayout(jFramelaptop.getContentPane());
+        jFramelaptop.getContentPane().setLayout(jFramelaptopLayout);
+        jFramelaptopLayout.setHorizontalGroup(
+            jFramelaptopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jFramelaptopLayout.setVerticalGroup(
+            jFramelaptopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
+        javax.swing.GroupLayout jFrameescritorioLayout = new javax.swing.GroupLayout(jFrameescritorio.getContentPane());
+        jFrameescritorio.getContentPane().setLayout(jFrameescritorioLayout);
+        jFrameescritorioLayout.setHorizontalGroup(
+            jFrameescritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jFrameescritorioLayout.setVerticalGroup(
+            jFrameescritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Botonagregarcompu.setText("CRUD");
+        Botonagregarcompu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonagregarcompuMouseClicked(evt);
+            }
+        });
+        Botonagregarcompu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonagregarcompuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Botonagregarcompu, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 190, 70));
+
+        Botoningresarcompu.setText("Ingresar a computadora");
+        getContentPane().add(Botoningresarcompu, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 220, 90));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotonagregarcompuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonagregarcompuMouseClicked
+        
+    }//GEN-LAST:event_BotonagregarcompuMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void BotonagregarcompuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonagregarcompuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonagregarcompuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +159,12 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Botonagregarcompu;
+    private javax.swing.JButton Botoningresarcompu;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JFrame jFramecrud;
+    private javax.swing.JFrame jFrameescritorio;
+    private javax.swing.JFrame jFramelaptop;
     // End of variables declaration//GEN-END:variables
 }

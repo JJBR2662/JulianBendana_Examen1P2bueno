@@ -1,0 +1,57 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author bayer
+ */
+public class PC_Laptop extends PC{
+    private String marca, defpantalla;
+    private boolean RGB;
+
+    public PC_Laptop() {
+        super();
+    }
+
+    public PC_Laptop( String marca, String defpantalla, boolean tarjetagrafica, boolean RGB, String ip, String mascara, String host) {
+        super(ip, mascara, host);
+        this.marca = marca;
+        this.defpantalla = defpantalla;
+        this.RGB = RGB;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getDefpantalla() {
+        return defpantalla;
+    }
+
+    public void setDefpantalla(String defpantalla) {
+        this.defpantalla = defpantalla;
+    }
+
+    public boolean isRGB() {
+        return RGB;
+    }
+
+    public void setRGB(boolean RGB) {
+        this.RGB = RGB;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+" PC_Laptop{" + "marca=" + marca + ", defpantalla=" + defpantalla + ", RGB=" + RGB + '}';
+    }
+
+    
+    
+    
+}
