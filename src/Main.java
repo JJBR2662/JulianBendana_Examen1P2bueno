@@ -6,7 +6,6 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author bayer
@@ -17,10 +16,11 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     ArrayList<PC> compus = new ArrayList();
+
     public Main() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
+
     }
 
     /**
@@ -33,10 +33,13 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         jFramecrud = new javax.swing.JFrame();
-        botonescritorio = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         botonlaptop = new javax.swing.JButton();
+        botonescritorio = new javax.swing.JButton();
+        botonlistar = new javax.swing.JButton();
+        botoneliminar = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
         jFramelaptop = new javax.swing.JFrame();
         jPanel3 = new javax.swing.JPanel();
         IP = new javax.swing.JTextField();
@@ -73,6 +76,16 @@ public class Main extends javax.swing.JFrame {
         tienetarjeta = new javax.swing.JList<>();
         jLabel15 = new javax.swing.JLabel();
         agregarescritorio = new javax.swing.JButton();
+        jFrameListar = new javax.swing.JFrame();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        listarcompus = new javax.swing.JTextArea();
+        salirlistar = new javax.swing.JButton();
+        Jframeremove = new javax.swing.JFrame();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        listaquitar = new javax.swing.JTextArea();
+        jLabel19 = new javax.swing.JLabel();
+        cualborrar = new javax.swing.JTextField();
+        botonborrar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         Botonagregarcompu = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
@@ -82,16 +95,8 @@ public class Main extends javax.swing.JFrame {
         jFramecrud.setSize(new java.awt.Dimension(593, 464));
         jFramecrud.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        botonescritorio.setText("Escritorio");
-        botonescritorio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonescritorioMouseClicked(evt);
-            }
-        });
-        jFramecrud.getContentPane().add(botonescritorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 268, 170, 86));
-
         jLabel16.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
-        jLabel16.setText("Que quiere agregar?");
+        jLabel16.setText("En caso de agregar, ingrese cual");
 
         botonlaptop.setText("Laptop");
         botonlaptop.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -105,6 +110,30 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        botonescritorio.setText("Escritorio");
+        botonescritorio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonescritorioMouseClicked(evt);
+            }
+        });
+
+        botonlistar.setText("Listar");
+        botonlistar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonlistarMouseClicked(evt);
+            }
+        });
+
+        botoneliminar.setText("Eliminar de la lista");
+        botoneliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botoneliminarMouseClicked(evt);
+            }
+        });
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
+        jLabel18.setText("ELIMINAR Y LISTAR");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -112,24 +141,45 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addComponent(jLabel16))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(210, 210, 210)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(botonlaptop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(botonescritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(botoneliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonlistar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(210, 210, 210)
-                        .addComponent(botonlaptop, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(183, Short.MAX_VALUE))
+                        .addGap(115, 115, 115)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(71, 71, 71)
+                                .addComponent(jLabel18)))))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(botonlaptop, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonlaptop, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botonescritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonlistar, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botoneliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(54, 54, 54))
         );
 
-        jFramecrud.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 460));
+        jFramecrud.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 460));
 
         jFramelaptop.setPreferredSize(new java.awt.Dimension(600, 550));
         jFramelaptop.setSize(new java.awt.Dimension(600, 550));
@@ -405,6 +455,92 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jFrameListar.setSize(new java.awt.Dimension(601, 485));
+
+        listarcompus.setColumns(20);
+        listarcompus.setRows(5);
+        jScrollPane3.setViewportView(listarcompus);
+
+        salirlistar.setText("SALIR");
+        salirlistar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                salirlistarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jFrameListarLayout = new javax.swing.GroupLayout(jFrameListar.getContentPane());
+        jFrameListar.getContentPane().setLayout(jFrameListarLayout);
+        jFrameListarLayout.setHorizontalGroup(
+            jFrameListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameListarLayout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(151, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameListarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(salirlistar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(209, 209, 209))
+        );
+        jFrameListarLayout.setVerticalGroup(
+            jFrameListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameListarLayout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(salirlistar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
+        );
+
+        Jframeremove.setSize(new java.awt.Dimension(471, 431));
+
+        listaquitar.setColumns(20);
+        listaquitar.setRows(5);
+        jScrollPane5.setViewportView(listaquitar);
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
+        jLabel19.setText("Ingrese el numero del que quiere borrar");
+
+        botonborrar.setText("Borrar");
+        botonborrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonborrarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JframeremoveLayout = new javax.swing.GroupLayout(Jframeremove.getContentPane());
+        Jframeremove.getContentPane().setLayout(JframeremoveLayout);
+        JframeremoveLayout.setHorizontalGroup(
+            JframeremoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JframeremoveLayout.createSequentialGroup()
+                .addGroup(JframeremoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JframeremoveLayout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel19))
+                    .addGroup(JframeremoveLayout.createSequentialGroup()
+                        .addGap(196, 196, 196)
+                        .addComponent(cualborrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(JframeremoveLayout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addComponent(botonborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(JframeremoveLayout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+        JframeremoveLayout.setVerticalGroup(
+            JframeremoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JframeremoveLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cualborrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(botonborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -483,13 +619,13 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_IPActionPerformed
 
     private void botonagregarvariableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonagregarvariableMouseClicked
-        if (IP.getText().isBlank()||Mascarared.getText().isBlank()||Hostname.getText().isBlank()||marca.getText().isBlank()||Definiciondepantalla.getText().isBlank()||rgb.isSelectionEmpty()) {
+        if (IP.getText().isBlank() || Mascarared.getText().isBlank() || Hostname.getText().isBlank() || marca.getText().isBlank() || Definiciondepantalla.getText().isBlank() || rgb.isSelectionEmpty()) {
             JOptionPane.showMessageDialog(null, "No se puede dejar NI UN solo espacio en blanco");
-        }else{
+        } else {
             boolean serargb;
             if (rgb.getSelectedValue().equalsIgnoreCase("si")) {
                 serargb = true;
-            }else{
+            } else {
                 serargb = false;
             }
             compus.add(new PC_Laptop(marca.getText(), Definiciondepantalla.getText(), serargb, IP.getText(), Mascarared.getText(), Hostname.getText()));
@@ -509,13 +645,13 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_DefiniciondepantallaActionPerformed
 
     private void agregarescritorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarescritorioMouseClicked
-        if (IP2.getText().isBlank()||Mascarared2.getText().isBlank()||hostname2.getText().isBlank()||memram.getText().isBlank()||almacenamientoo.getText().isBlank()||tipodealma.getText().isBlank()||tienetarjeta.isSelectionEmpty()){
+        if (IP2.getText().isBlank() || Mascarared2.getText().isBlank() || hostname2.getText().isBlank() || memram.getText().isBlank() || almacenamientoo.getText().isBlank() || tipodealma.getText().isBlank() || tienetarjeta.isSelectionEmpty()) {
             JOptionPane.showMessageDialog(null, "No se puede dejar NI UN solo espacio en blanco");
-        }else{
+        } else {
             boolean tendra;
             if (tienetarjeta.getSelectedValue().equalsIgnoreCase("Si")) {
                 tendra = true;
-            }else{
+            } else {
                 tendra = false;
             }
             int memoriaram = Integer.parseInt(memram.getText());
@@ -532,6 +668,31 @@ public class Main extends javax.swing.JFrame {
             jFrameescritorio.setVisible(false);
         }
     }//GEN-LAST:event_agregarescritorioMouseClicked
+
+    private void botonlistarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonlistarMouseClicked
+        jFrameListar.setVisible(true);
+        listarcompus.setText(compus.toString());
+
+    }//GEN-LAST:event_botonlistarMouseClicked
+
+    private void botoneliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botoneliminarMouseClicked
+        Jframeremove.setVisible(true);
+        String s = "";
+        for (int i = 0; i < compus.size(); i++) {
+            s+= compus.indexOf(i)+"- "+compus.toString()+"\n";
+        }
+        listaquitar.setText(s);
+    }//GEN-LAST:event_botoneliminarMouseClicked
+
+    private void salirlistarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirlistarMouseClicked
+        jFrameListar.setVisible(false);
+    }//GEN-LAST:event_salirlistarMouseClicked
+
+    private void botonborrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonborrarMouseClicked
+        int cual = Integer.parseInt(cualborrar.getText());
+        compus.remove(cual);
+        
+    }//GEN-LAST:event_botonborrarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -575,14 +736,20 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField Hostname;
     private javax.swing.JTextField IP;
     private javax.swing.JTextField IP2;
+    private javax.swing.JFrame Jframeremove;
     private javax.swing.JTextField Mascarared;
     private javax.swing.JTextField Mascarared2;
     private javax.swing.JButton agregarescritorio;
     private javax.swing.JTextField almacenamientoo;
     private javax.swing.JButton botonagregarvariable;
+    private javax.swing.JButton botonborrar;
+    private javax.swing.JButton botoneliminar;
     private javax.swing.JButton botonescritorio;
     private javax.swing.JButton botonlaptop;
+    private javax.swing.JButton botonlistar;
+    private javax.swing.JTextField cualborrar;
     private javax.swing.JTextField hostname2;
+    private javax.swing.JFrame jFrameListar;
     private javax.swing.JFrame jFramecrud;
     private javax.swing.JFrame jFrameescritorio;
     private javax.swing.JFrame jFramelaptop;
@@ -595,6 +762,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -609,9 +778,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTextArea listaquitar;
+    private javax.swing.JTextArea listarcompus;
     private javax.swing.JTextField marca;
     private javax.swing.JTextField memram;
     private javax.swing.JList<String> rgb;
+    private javax.swing.JButton salirlistar;
     private javax.swing.JList<String> tienetarjeta;
     private javax.swing.JTextField tipodealma;
     // End of variables declaration//GEN-END:variables
