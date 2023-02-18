@@ -517,14 +517,14 @@ public class Main extends javax.swing.JFrame {
                         .addGap(66, 66, 66)
                         .addComponent(jLabel19))
                     .addGroup(JframeremoveLayout.createSequentialGroup()
-                        .addGap(196, 196, 196)
-                        .addComponent(cualborrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(104, 104, 104)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(JframeremoveLayout.createSequentialGroup()
                         .addGap(176, 176, 176)
                         .addComponent(botonborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(JframeremoveLayout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(168, 168, 168)
+                        .addComponent(cualborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
         JframeremoveLayout.setVerticalGroup(
@@ -670,18 +670,28 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_agregarescritorioMouseClicked
 
     private void botonlistarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonlistarMouseClicked
-        jFrameListar.setVisible(true);
-        listarcompus.setText(compus.toString());
+        if (compus.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "perrin, esta vacio, no puede");
+        } else {
+            jFrameListar.setVisible(true);
+            jFrameListar.setLocationRelativeTo(null);
+            listarcompus.setText(compus.toString());
+        }
 
     }//GEN-LAST:event_botonlistarMouseClicked
 
     private void botoneliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botoneliminarMouseClicked
-        Jframeremove.setVisible(true);
-        String s = "";
-        for (int i = 0; i < compus.size(); i++) {
-            s+= compus.indexOf(i)+"- "+compus.toString()+"\n";
+        if (compus.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "perrin, esta vacio, no puede");
+        } else {
+            Jframeremove.setVisible(true);
+            Jframeremove.setLocationRelativeTo(null);
+            String s = "";
+            for (int i = 0; i < compus.size(); i++) {
+                s += i + "- " + compus.get(i).toString() + "\n";
+            }
+            listaquitar.setText(s);
         }
-        listaquitar.setText(s);
     }//GEN-LAST:event_botoneliminarMouseClicked
 
     private void salirlistarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirlistarMouseClicked
@@ -691,7 +701,8 @@ public class Main extends javax.swing.JFrame {
     private void botonborrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonborrarMouseClicked
         int cual = Integer.parseInt(cualborrar.getText());
         compus.remove(cual);
-        
+        cualborrar.setText(null);
+        Jframeremove.setVisible(false);
     }//GEN-LAST:event_botonborrarMouseClicked
 
     /**
