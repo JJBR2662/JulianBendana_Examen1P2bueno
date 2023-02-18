@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /*
@@ -20,7 +21,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         this.setLocationRelativeTo(null);
-
+        
     }
 
     /**
@@ -181,7 +182,6 @@ public class Main extends javax.swing.JFrame {
 
         jFramecrud.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 460));
 
-        jFramelaptop.setPreferredSize(new java.awt.Dimension(600, 550));
         jFramelaptop.setSize(new java.awt.Dimension(600, 550));
         jFramelaptop.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -311,7 +311,6 @@ public class Main extends javax.swing.JFrame {
 
         jFramelaptop.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 470));
 
-        jFrameescritorio.setPreferredSize(new java.awt.Dimension(900, 600));
         jFrameescritorio.setSize(new java.awt.Dimension(900, 600));
 
         jLabel8.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
@@ -560,6 +559,14 @@ public class Main extends javax.swing.JFrame {
         jLabel17.setText("Que quiere hacer?");
 
         Botoningresarcompu.setText("Ingresar a computadora");
+        Botoningresarcompu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotoningresarcompuMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotoningresarcompuMouseEntered(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -704,6 +711,81 @@ public class Main extends javax.swing.JFrame {
         cualborrar.setText(null);
         Jframeremove.setVisible(false);
     }//GEN-LAST:event_botonborrarMouseClicked
+
+    private void BotoningresarcompuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotoningresarcompuMouseClicked
+        this.setVisible(false);
+        Scanner enteros = new Scanner(System.in);
+        Scanner orac = new Scanner(System.in);
+        String ipconsola = orac.nextLine();
+        int cual = 0;
+        boolean hay = false;
+        for (int i = 0; i < compus.size(); i++) {
+            if (compus.get(i).getIp().equals(ipconsola)) {
+                cual = i;
+                hay = true;
+            }
+        }
+        if (hay) {
+            System.out.println("si esta en la lista");
+            int op;
+            do {
+                System.out.println("""
+                                   1- Ping
+                                   2- Show
+                                   3- Exit
+                                   """);
+                System.out.print("Ingrese que quiere hacer: ");
+                op = enteros.nextInt();
+                switch (op) {
+                    case 1:
+                        System.out.print("Ingrese la IP de la compu que se quiere conectar: ");
+                        String ipconsola2 = orac.nextLine();
+                        int cual2 = 0;
+                        boolean hay2 = false;
+                        for (int i = 0; i < compus.size(); i++) {
+                            if (compus.get(i).getIp().equals(ipconsola2)) {
+                                cual2 = i;
+                                hay2 = true;
+                            }
+                        }
+                        if (hay2) {
+                            compus.get(cual).Ping(compus, cual, cual2);
+                        }else{
+                            System.out.println(compus.get(cual).getHost()+"#ping_"+ipconsola2);
+                            System.out.println("Pinging to "+ipconsola2+" with 32 bits of data:");
+                            System.out.println("Request timed out");
+                            System.out.println("Request timed out");
+                            System.out.println("Request timed out");
+                            System.out.println("Request timed out");
+                            System.out.println();
+                            System.out.println("Ping statistics for "+ipconsola2+":");
+                            System.out.println("    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss) ");
+                            System.out.println(compus.get(cual).getHost()+"#");
+                        }
+                        break;
+                    case 2:
+                        System.out.println("IP: " + compus.get(cual).getIp());
+                        System.out.println("Mascara de Red: " + compus.get(cual).getMascara());
+                        break;
+                    case 3:
+                        System.out.println("ADIOOOOOSSSSS");
+                        this.setVisible(true);
+                        break;
+                    default:
+                        System.out.println("Opcion no valida, ingrese de nuevo");
+                        break;
+                }
+            } while (op!=3);
+        } else {
+            System.out.println("La ip que ingreso no esta en la lista, bai");
+            this.setVisible(true);
+        }
+        
+    }//GEN-LAST:event_BotoningresarcompuMouseClicked
+
+    private void BotoningresarcompuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotoningresarcompuMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotoningresarcompuMouseEntered
 
     /**
      * @param args the command line arguments
