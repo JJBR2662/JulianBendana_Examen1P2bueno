@@ -78,6 +78,7 @@ public class Main extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         agregarescritorio = new javax.swing.JButton();
         jFrameListar = new javax.swing.JFrame();
+        jPanel7 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         listarcompus = new javax.swing.JTextArea();
         salirlistar = new javax.swing.JButton();
@@ -87,6 +88,8 @@ public class Main extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         cualborrar = new javax.swing.JTextField();
         botonborrar = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         Botonagregarcompu = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
@@ -96,9 +99,14 @@ public class Main extends javax.swing.JFrame {
         jFramecrud.setSize(new java.awt.Dimension(593, 464));
         jFramecrud.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 0));
+
         jLabel16.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
         jLabel16.setText("En caso de agregar, ingrese cual");
 
+        botonlaptop.setBackground(new java.awt.Color(0, 0, 255));
+        botonlaptop.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        botonlaptop.setForeground(new java.awt.Color(255, 255, 255));
         botonlaptop.setText("Laptop");
         botonlaptop.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -111,6 +119,9 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        botonescritorio.setBackground(new java.awt.Color(0, 0, 255));
+        botonescritorio.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        botonescritorio.setForeground(new java.awt.Color(255, 255, 255));
         botonescritorio.setText("Escritorio");
         botonescritorio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -118,6 +129,9 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        botonlistar.setBackground(new java.awt.Color(51, 0, 255));
+        botonlistar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        botonlistar.setForeground(new java.awt.Color(255, 255, 255));
         botonlistar.setText("Listar");
         botonlistar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -125,6 +139,9 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        botoneliminar.setBackground(new java.awt.Color(0, 0, 255));
+        botoneliminar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        botoneliminar.setForeground(new java.awt.Color(255, 255, 255));
         botoneliminar.setText("Eliminar de la lista");
         botoneliminar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -140,27 +157,26 @@ public class Main extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(botoneliminar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botonlistar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77))
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(210, 210, 210)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(botonlaptop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botonescritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(botoneliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonlistar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel16)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(71, 71, 71)
-                                .addComponent(jLabel18)))))
-                .addContainerGap(48, Short.MAX_VALUE))
+                                .addComponent(jLabel18))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(210, 210, 210)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(botonlaptop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botonescritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,14 +198,24 @@ public class Main extends javax.swing.JFrame {
 
         jFramecrud.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 460));
 
+        jFramelaptop.setPreferredSize(new java.awt.Dimension(600, 550));
         jFramelaptop.setSize(new java.awt.Dimension(600, 550));
         jFramelaptop.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel3.setBackground(new java.awt.Color(102, 255, 102));
+
+        IP.setBackground(new java.awt.Color(255, 204, 255));
         IP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IPActionPerformed(evt);
             }
         });
+
+        Mascarared.setBackground(new java.awt.Color(255, 204, 255));
+
+        Hostname.setBackground(new java.awt.Color(255, 204, 255));
+
+        marca.setBackground(new java.awt.Color(255, 204, 255));
 
         jLabel1.setText("IP:");
 
@@ -201,12 +227,14 @@ public class Main extends javax.swing.JFrame {
 
         jLabel5.setText("Definicion de Pantalla:");
 
+        Definiciondepantalla.setBackground(new java.awt.Color(255, 204, 255));
         Definiciondepantalla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DefiniciondepantallaActionPerformed(evt);
             }
         });
 
+        rgb.setBackground(new java.awt.Color(255, 204, 255));
         rgb.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         rgb.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Si", "No" };
@@ -218,6 +246,7 @@ public class Main extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setText("¿El teclado tiene RGB?");
 
+        botonagregarvariable.setBackground(new java.awt.Color(255, 204, 255));
         botonagregarvariable.setText("Agregar Laptop");
         botonagregarvariable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -270,7 +299,7 @@ public class Main extends javax.swing.JFrame {
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addGap(111, 111, 111)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,9 +338,11 @@ public class Main extends javax.swing.JFrame {
                         .addGap(184, 184, 184))))
         );
 
-        jFramelaptop.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 470));
+        jFramelaptop.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 550));
 
         jFrameescritorio.setSize(new java.awt.Dimension(900, 600));
+
+        jPanel4.setBackground(new java.awt.Color(51, 255, 255));
 
         jLabel8.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         jLabel8.setText("AGREGANDO UNA COMPUTADORA DE ESCRITORIO");
@@ -319,21 +350,34 @@ public class Main extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel9.setText("IP:");
 
+        IP2.setBackground(new java.awt.Color(51, 255, 51));
+
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setText("Mascara de red:");
+
+        Mascarared2.setBackground(new java.awt.Color(51, 255, 0));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel11.setText("Host Name:");
 
+        hostname2.setBackground(new java.awt.Color(0, 255, 51));
+
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel12.setText("Cuanto tiene de Ram:");
+
+        memram.setBackground(new java.awt.Color(0, 255, 0));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel13.setText("Almacenamiento:");
 
+        almacenamientoo.setBackground(new java.awt.Color(0, 255, 0));
+
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel14.setText("Tipo de Almacenamiento:");
 
+        tipodealma.setBackground(new java.awt.Color(0, 255, 0));
+
+        tienetarjeta.setBackground(new java.awt.Color(51, 255, 0));
         tienetarjeta.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         tienetarjeta.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Si", "No" };
@@ -345,6 +389,7 @@ public class Main extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel15.setText("¿Tiene Tarjeta Grafica?");
 
+        agregarescritorio.setBackground(new java.awt.Color(0, 255, 0));
         agregarescritorio.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 18)); // NOI18N
         agregarescritorio.setText("Agregar Computadora");
         agregarescritorio.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -454,12 +499,21 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jFrameListar.setBackground(new java.awt.Color(153, 0, 153));
         jFrameListar.setSize(new java.awt.Dimension(601, 485));
+        jFrameListar.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel7.setBackground(new java.awt.Color(255, 0, 0));
+
+        listarcompus.setBackground(new java.awt.Color(0, 0, 204));
         listarcompus.setColumns(20);
+        listarcompus.setForeground(new java.awt.Color(255, 255, 255));
         listarcompus.setRows(5);
         jScrollPane3.setViewportView(listarcompus);
 
+        salirlistar.setBackground(new java.awt.Color(0, 0, 204));
+        salirlistar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        salirlistar.setForeground(new java.awt.Color(255, 255, 255));
         salirlistar.setText("SALIR");
         salirlistar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -467,82 +521,99 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jFrameListarLayout = new javax.swing.GroupLayout(jFrameListar.getContentPane());
-        jFrameListar.getContentPane().setLayout(jFrameListarLayout);
-        jFrameListarLayout.setHorizontalGroup(
-            jFrameListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrameListarLayout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(151, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameListarLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(salirlistar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(209, 209, 209))
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(184, 184, 184)
+                        .addComponent(salirlistar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
-        jFrameListarLayout.setVerticalGroup(
-            jFrameListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrameListarLayout.createSequentialGroup()
-                .addGap(88, 88, 88)
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addGap(72, 72, 72)
                 .addComponent(salirlistar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
-        Jframeremove.setSize(new java.awt.Dimension(471, 431));
+        jFrameListar.getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 510));
 
+        Jframeremove.setBackground(new java.awt.Color(0, 0, 0));
+        Jframeremove.setSize(new java.awt.Dimension(471, 431));
+        Jframeremove.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        listaquitar.setBackground(new java.awt.Color(255, 102, 0));
         listaquitar.setColumns(20);
+        listaquitar.setForeground(new java.awt.Color(255, 255, 255));
         listaquitar.setRows(5);
         jScrollPane5.setViewportView(listaquitar);
 
-        jLabel19.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
-        jLabel19.setText("Ingrese el numero del que quiere borrar");
+        Jframeremove.getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 251, 174));
 
+        jLabel19.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Ingrese el numero del que quiere borrar");
+        Jframeremove.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 252, -1, 41));
+
+        cualborrar.setBackground(new java.awt.Color(255, 102, 0));
+        cualborrar.setForeground(new java.awt.Color(255, 255, 255));
+        Jframeremove.getContentPane().add(cualborrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 299, 125, -1));
+
+        botonborrar.setBackground(new java.awt.Color(255, 102, 0));
         botonborrar.setText("Borrar");
         botonborrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonborrarMouseClicked(evt);
             }
         });
+        Jframeremove.getContentPane().add(botonborrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 347, 107, 39));
 
-        javax.swing.GroupLayout JframeremoveLayout = new javax.swing.GroupLayout(Jframeremove.getContentPane());
-        Jframeremove.getContentPane().setLayout(JframeremoveLayout);
-        JframeremoveLayout.setHorizontalGroup(
-            JframeremoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JframeremoveLayout.createSequentialGroup()
-                .addGroup(JframeremoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JframeremoveLayout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel19))
-                    .addGroup(JframeremoveLayout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(JframeremoveLayout.createSequentialGroup()
-                        .addGap(176, 176, 176)
-                        .addComponent(botonborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(JframeremoveLayout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(cualborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(71, Short.MAX_VALUE))
+        jPanel6.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 478, Short.MAX_VALUE)
         );
-        JframeremoveLayout.setVerticalGroup(
-            JframeremoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JframeremoveLayout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cualborrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(botonborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 433, Short.MAX_VALUE)
         );
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        Jframeremove.getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(204, 0, 0));
+
+        Botonagregarcompu.setBackground(new java.awt.Color(0, 0, 0));
+        Botonagregarcompu.setForeground(new java.awt.Color(255, 255, 255));
         Botonagregarcompu.setText("CRUD");
         Botonagregarcompu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -558,6 +629,8 @@ public class Main extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
         jLabel17.setText("Que quiere hacer?");
 
+        Botoningresarcompu.setBackground(new java.awt.Color(0, 0, 0));
+        Botoningresarcompu.setForeground(new java.awt.Color(255, 255, 255));
         Botoningresarcompu.setText("Ingresar a computadora");
         Botoningresarcompu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -709,6 +782,7 @@ public class Main extends javax.swing.JFrame {
         int cual = Integer.parseInt(cualborrar.getText());
         compus.remove(cual);
         cualborrar.setText(null);
+        JOptionPane.showMessageDialog(null, "Se borro correctamente");
         Jframeremove.setVisible(false);
     }//GEN-LAST:event_botonborrarMouseClicked
 
@@ -869,6 +943,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
